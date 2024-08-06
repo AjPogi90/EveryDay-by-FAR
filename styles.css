@@ -696,6 +696,81 @@ table td img {
         padding: 8px 16px;
     }
 }
+/* Existing styles here */
+
+/* Gallery Styles */
+.gallery {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #A57336;
+    padding: 50px;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative; /* Make the gallery position relative for absolute positioning of children */
+}
+
+.gallery img {
+    width: 200px; /* Adjust the size as needed */
+    height: 150px;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center horizontally */
+}
+
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 20%;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Responsive Styles for Gallery */
+@media (max-width: 768px) {
+    .prev, .next {
+        padding: 12px;
+        font-size: 16px;
+    
+    }
+    .slide img {
+        width: 200%;
+        display: block;
+    }
+    
+}
 
 /* Hidden class for mobile menu toggle */
 .hidden {
