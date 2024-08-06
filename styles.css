@@ -320,10 +320,6 @@ footer {
         font-size: 14px; /* Adjust font size for better readability */
         padding: 1px; /* Adjust padding */
     }
-/* Responsive Adjustments for Shop */
-    .card2 {
-        width: calc(100% - 20px);
-    }
    
 }
 
@@ -335,10 +331,14 @@ footer {
     gap: 20px;
 }
 .card2 {
-            
+    background-color: #A87324;
     border-radius: 15px;
-    width: calc(25% - 20px);
-    height: 520px;    
+    width: calc(25% - 20px); /* 4 cards per row, with gap */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    height: 680px; /* Adjust as needed */
 }
 .card2 img {
     width: 100%;
@@ -393,7 +393,6 @@ footer {
         width: calc(100% - 20px);
     }
 }
-
 /* Responsive Adjustments for Header */
 @media (max-width: 768px) {
     header {
@@ -481,8 +480,9 @@ footer {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    height: 680px; /* Adjust as needed */
+    min-height: 700px; /* Ensure minimum height */
 }
+
 
 .card2 img {
     width: 100%;
@@ -525,16 +525,34 @@ bottom: 1000px; /* Moves the heart up */
 }
 
 /* Responsive Adjustments For Shop*/
+/* For screens larger than 1200px (desktops) */
+@media (min-width: 1200px) {
+    .card2 {
+        width: calc(25% - 20px); /* 4 cards per row */
+    }
+}
+
+/* For tablets or medium screens (between 768px and 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .card2 {
+        width: calc(33.33% - 20px); /* 3 cards per row */
+    }
+}
+
+/* For mobile screens (up to 768px) */
 @media (max-width: 768px) {
     .card2 {
-        width: calc(50% - 20px); /* 2 cards per row on smaller screens */
+        width: calc(50% - 20px); /* 2 cards per row */
     }
 }
+
+/* For very small screens (up to 480px) */
 @media (max-width: 480px) {
     .card2 {
-        width: calc(100% - 20px); /* 1 card per row on very small screens */
+        width: calc(100% - 20px); /* 1 card per row */
     }
 }
+
 /* Design For Contact Page */
 .form-container {
     background-color: #A87324; /* Light pink background for form */
