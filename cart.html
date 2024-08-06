@@ -4,47 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart</title>
+    <!-- Sets the title of the webpage -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Links to an external CSS file for styling the webpage -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Links to an external CSS file for using Font Awesome icons -->
 </head>
 <body>
      <!-- Include header -->
      <script>
+        // JavaScript code to load header and footer content
         document.addEventListener('DOMContentLoaded', function() {
+            // Waits until the DOM content is fully loaded
             // Load the header
             fetch('header.html')
                 .then(response => response.text())
                 .then(data => {
                     document.body.insertAdjacentHTML('afterbegin', data);
-    
+                    // Inserts the header content at the beginning of the body
+
                     // Initialize the hamburger menu functionality
                     const hamburger = document.querySelector('.hamburger');
                     const navMenu = document.querySelector('nav ul');
-    
+
                     if (hamburger && navMenu) {
                         hamburger.addEventListener('click', function() {
                             navMenu.classList.toggle('show');
+                            // Toggles the 'show' class to display/hide the navigation menu on click
                         });
                     }
                 });
-    
+
             // Load the footer
             fetch('footer.html')
                 .then(response => response.text())
                 .then(data => {
                     document.body.insertAdjacentHTML('beforeend', data);
+                    // Inserts the footer content at the end of the body
                 });
         });
     </script>
-    
+
+    <!-- Main content section of the page -->
     <main>
         <div class="cart-container">
+            <!-- Container for the cart content -->
             <div class="cart-header">
                 <h1>Your Cart</h1>
+                <!-- Main heading of the page -->
                 <a href="shop.html">Continue Shopping</a>
+                <!-- Link to continue shopping -->
             </div>
+            
+            <!-- Table for displaying cart items -->
             <table>
                 <thead>
+                    <!-- Table header -->
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
@@ -53,34 +68,50 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Table body with cart items -->
                     <tr>
                         <td>
                             <img src="paint/binondomanila.jpg" alt="Product Image">
+                            <!-- Product image -->
                             <br>
                             <a href="#" class="remove-link">Remove</a>
+                            <!-- Link to remove the product from the cart -->
                         </td>
                         <td>P100</td>
+                        <!-- Product price -->
                         <td>1</td>
+                        <!-- Product quantity -->
                         <td>P100</td>
+                        <!-- Total price for the product -->
                     </tr>
                     <tr>
                         <td>
                             <img src="paint/dangwaflowermarket.jpg" alt="Product Image">
+                            <!-- Product image -->
                             <br>
                             <a href="#" class="remove-link">Remove</a>
+                            <!-- Link to remove the product from the cart -->
                         </td>
                         <td>P100</td>
+                        <!-- Product price -->
                         <td>1</td>
+                        <!-- Product quantity -->
                         <td>P100</td>
+                        <!-- Total price for the product -->
                     </tr>
                 </tbody>
             </table>
+
+            <!-- Checkout section -->
             <div class="checkout">
                 <strong>Subtotal P200</strong>
+                <!-- Subtotal price for all products in the cart -->
                 <br>
                 <button type="button">CHECKOUT</button>
+                <!-- Button to proceed to checkout -->
             </div>
         </div>
     </main>
 </body>
 </html>
+
