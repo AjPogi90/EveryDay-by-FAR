@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Everyday by FAR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Include header -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+
+                // Initialize the hamburger menu functionality
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('nav ul');
+
+                if (hamburger && navMenu) {
+                    hamburger.addEventListener('click', function() {
+                        navMenu.classList.toggle('show');
+                    });
+                }
+            });
+
+        // Load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    });
+</script>
+    
+    <main>
+        <div class="main-content">
+            <h1>I create because it makes me happy.</h1>
+            
+            <div class="text-content">
+                <h2>Welcome to my Creative Space!</h2>
+                <p>I’m a girl with a deep love for all things colorful. My art reflects the vibrancy of the world around me, from the lively streets of my city to the new places I explore. Each project is a new adventure, filled with inspirations.</p>
+                <p>Here, you’ll find a collection of my work and stories from my artistic journey. I’m thrilled to share my passion with you and invite you to come along as I explore, create, and celebrate the wonders of art.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

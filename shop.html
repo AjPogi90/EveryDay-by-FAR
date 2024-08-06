@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Prints</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Include header -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+    
+                    // Initialize the hamburger menu functionality
+                    const hamburger = document.querySelector('.hamburger');
+                    const navMenu = document.querySelector('nav ul');
+    
+                    if (hamburger && navMenu) {
+                        hamburger.addEventListener('click', function() {
+                            navMenu.classList.toggle('show');
+                        });
+                    }
+                });
+    
+            // Load the footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+            
+            // Initialize heart and cart icon functionality
+            document.body.addEventListener('click', function(event) {
+                if (event.target.classList.contains('heart')) {
+                    event.target.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+    
+    <main>
+        <section class="main-content">
+            <h1>Art Prints</h1>
+            <div class="cards-container">
+                <div class="card2">
+                    <img src="paint/arrocerospark.jpg" alt="Art Print">
+                    <h4>Php 100</h4>
+                    <a href="contact.html">
+                        <button>Send Me a Message</button>
+                    </a>
+                    <h4>Arroceros Park</h4>
+                    <p>6 x 4 inches | Prisma Colored Pencils</p>
+                    <div class="icons">
+                        <span class="heart">&#x2665;</span>
+                        <i class="fas fa-shopping-cart fa-2x" style="color: #f7f7f7;"></i>
+                    </div>
+                </div>
+                <!-- Repeat .card2 for other items -->
+                <div class="card2">
+                    <img src="paint/binondomanila.jpg" alt="Art Print">
+                    <h4>Php 100</h4>
+                    <a href="contact.html">
+                        <button>Send Me a Message</button>
+                    </a>
+                    <h4>Chuan Kee, Binondo, Manila</h4>
+                    <p>6 x 4 inches | Prisma Colored Pencils</p>
+                    <div class="icons">
+                        <span class="heart">&#x2665;</span>
+                        <i class="fas fa-shopping-cart fa-2x" style="color: #f7f7f7;"></i>
+                    </div>
+                </div>
+                <div class="card2">
+                    <img src="paint/dangwaflowermarket.jpg" alt="Art Print">
+                    <h4>Php 100</h4>
+                    <a href="contact.html">
+                        <button>Send Me a Message</button>
+                    </a>
+                    <h4>Dangwa Flower Market</h4>
+                    <p>6 x 4 inches | Prisma Colored Pencils</p>
+                    <div class="icons">
+                        <span class="heart">&#x2665;</span>
+                        <i class="fas fa-shopping-cart fa-2x" style="color: #f7f7f7;"></i>
+                    </div>
+                </div>
+                <div class="card2">
+                    <img src="paint/upsunkengarden.jpg" alt="Art Print">
+                    <h4>Php 100</h4>
+                    <a href="contact.html">
+                        <button>Send Me a Message</button>
+                    </a>
+                    <h4>U.P Sunken Garden</h4>
+                    <p>6 x 4 inches | Prisma Colored Pencils</p>
+                    <div class="icons">
+                        <span class="heart">&#x2665;</span>
+                        <i class="fas fa-shopping-cart fa-2x" style="color: #f7f7f7;"></i>
+                    </div>
+                </div>
+                <!-- Add more cards if needed -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

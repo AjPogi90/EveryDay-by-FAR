@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+     <!-- Include header -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+    
+                    // Initialize the hamburger menu functionality
+                    const hamburger = document.querySelector('.hamburger');
+                    const navMenu = document.querySelector('nav ul');
+    
+                    if (hamburger && navMenu) {
+                        hamburger.addEventListener('click', function() {
+                            navMenu.classList.toggle('show');
+                        });
+                    }
+                });
+    
+            // Load the footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+    
+    <main>
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>Your Cart</h1>
+                <a href="shop.html">Continue Shopping</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="paint/binondomanila.jpg" alt="Product Image">
+                            <br>
+                            <a href="#" class="remove-link">Remove</a>
+                        </td>
+                        <td>P100</td>
+                        <td>1</td>
+                        <td>P100</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="paint/dangwaflowermarket.jpg" alt="Product Image">
+                            <br>
+                            <a href="#" class="remove-link">Remove</a>
+                        </td>
+                        <td>P100</td>
+                        <td>1</td>
+                        <td>P100</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="checkout">
+                <strong>Subtotal P200</strong>
+                <br>
+                <button type="button">CHECKOUT</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

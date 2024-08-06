@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Destinations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+       <!-- Include header -->
+       <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+    
+                    // Initialize the hamburger menu functionality
+                    const hamburger = document.querySelector('.hamburger');
+                    const navMenu = document.querySelector('nav ul');
+    
+                    if (hamburger && navMenu) {
+                        hamburger.addEventListener('click', function() {
+                            navMenu.classList.toggle('show');
+                        });
+                    }
+                });
+    
+            // Load the footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+    <main>
+        <section class="main-content">
+            <h1>The Destinations</h1>
+            <p>Follow along as I share my art and adventures, and discover exciting new destinations with me.</p>
+            
+            <div class="text-content">
+                <p>Explore the various destinations I have visited, filled with unique experiences and beautiful landscapes.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <h2>Arroceros Forest Park</h2>
+                    <p>I went to Arroceros Forest Park in Manila, for a quiet escape from the city's noise. The park, a small urban oasis full of trees and plants, offered a relaxing stroll with lots of shade and mild winds. It was an inviting spot to ponder and unwind, emphasizing the value of green spaces in cities. If you need some time away from city life, Arroceros Forest Park is an excellent place for you to disconnect and enjoy nature.</p>
+                </div>
+                <div class="card">
+                    <h2>Chuan Kee, Binondo, Manila</h2>
+                    <p>I went to Chuan Kee in Binondo, Manila, with some friends, and it was a wonderful time. The restaurant's lively atmosphere set the stage for a delightful meal. The signature rice was carefully seasoned. Chuan Kee serves traditional Chinese cuisine in a local setting. It's a must-visit if you're in Binondo and want some superb Chinese food.</p>
+                </div>
+                <div class="card">
+                    <h2>Dangwa Flower Market</h2>
+                    <p>I visited Dangwa Flower Market in Manila, and it was a vibrant experience. The market was packed with beautiful flowers of all kinds. Although it was a bit overwhelming, I enjoyed exploring the small stands and how they create bouquets.</p>
+                </div>
+                <div class="card">
+                    <h2>U.P Sunken Garden</h2>
+                    <p>I grew up here and this has a special place in my heart. It’s filled with nostalgia, even more so when the street vendors sell dirty ice cream, a variety of tusok-tusok, and all sorts of Filipino street food from sweet to savory. You can spend time with your loved ones and touch some grass. This place is definitely worth the visit and I must say it is my favorite.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

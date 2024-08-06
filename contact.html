@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send a Message</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+     <!-- Include header -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+    
+                    // Initialize the hamburger menu functionality
+                    const hamburger = document.querySelector('.hamburger');
+                    const navMenu = document.querySelector('nav ul');
+    
+                    if (hamburger && navMenu) {
+                        hamburger.addEventListener('click', function() {
+                            navMenu.classList.toggle('show');
+                        });
+                    }
+                });
+    
+            // Load the footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+    
+    <main>
+        <div class="form-container">
+            <h1>Send a Message</h1>
+            <form>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <div class="button-group">
+                    <button type="button" class="postcard">SEND ME A POSTCARD</button>
+                    <button type="submit" class="submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
